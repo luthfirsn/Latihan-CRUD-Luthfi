@@ -5,7 +5,7 @@
     </div>
     <br>
     <div >
-        <router-Link to="/add" class="btn btn-primary mb-1 mt" style=" width: 150px;" v-show="!success">Add data jos</router-Link>
+        <router-Link to="/add" class="btn btn-primary mb-1 mt" style=" width: 150px;" v-show="!success">Add data </router-Link>
     </div>
 
     <div class="row" v-show="!success">
