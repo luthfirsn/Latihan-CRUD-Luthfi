@@ -1,5 +1,8 @@
 <template>
-    
+  <div>
+    <div>
+        <img src="https://www.gstatic.com/classroom/themes/img_code.jpg" alt="" id="Logo" width="100%" height="170px">
+    </div>
     <div class="d-flex flex-row justify-content-center">
         <form class="border   border-primary rounded my-3 p-5" style="width: 800px;" @submit.prevent="inputAddForm" v-show="!success">
         <h2 class="text-center mb-3 p-2">Update Form</h2>
@@ -58,11 +61,12 @@
 </form>
   <SuccessForm v-show="success"></SuccessForm>
 </div>
+  </div>
 </template>
 
 <script>
-import ShippingService from '@/ShippingService';
-import SuccessForm from './SuccesForm.vue';
+import FormService from '@/FormService';
+import SuccessForm from './SuccessUpdateForm.vue';
 
 export default {
 
@@ -88,7 +92,7 @@ export default {
     let data = this.studentData;
     let id = this.$route.params.id
 
-          ShippingService.updateStudent(id, data)
+          FormService.updateStudent(id, data)
               .then(response => {
                 console.log(response.data);
                 this.success = true;
@@ -100,7 +104,7 @@ export default {
 
        viewUpdate() {
         let id = this.$route.params.id
-        ShippingService.getStudent(id)
+        FormService.getStudent(id)
         .then(response => {
             this.studentData = response.data;
             console.log(this.studentData);

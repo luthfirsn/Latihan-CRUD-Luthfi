@@ -1,6 +1,5 @@
 <template>
   <div >
-    <Navbar></Navbar>
     <Delete></Delete>
     <Copyright></Copyright>
    

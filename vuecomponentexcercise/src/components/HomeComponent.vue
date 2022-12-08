@@ -1,7 +1,7 @@
 <template>
     <div>
     <div>
-        <img src="https://www.gstatic.com/classroom/themes/img_code.jpg" alt="" id="Logo" width="100%" height="300px">
+        <img src="https://www.gstatic.com/classroom/themes/img_code.jpg" alt="" id="Logo" width="100%" height="170px">
     </div>
     <br>
     <div >
@@ -12,13 +12,27 @@
             <div v-for="item in studentData" :key="item.id" class="p-3 col-4">
                 <div class="card text-left">
                 <div class="card-body">    
-                    <dt>{{item.student_name}},</dt>
-                    <dd>{{item.student_age}}years old</dd>
-                    <p>{{item.self_description}}</p>
-                    <p>Student Email : {{item.student_email}}</p>
-                    <p>Soft Skills   : {{item.shoft_skill}}</p>
-                    <p>Hard Skills   : {{item.hard_skill}}</p>
-                    <p>Interest      : {{item.interest}}</p>
+                    <h3>{{ item.student_name + "," + " " + item.student_age + "years old" }},</h3>
+                    <h5>{{item.self_description}}</h5>
+                    <br>
+                    <table>
+                        <tr>
+                            <td>Student Email</td>
+                            <td>: {{item.student_email}}</td>
+                        </tr>
+                        <tr>
+                            <td>Soft Skills </td>
+                            <td>: {{item.shoft_skill}}</td>
+                        </tr>
+                        <tr>
+                            <td>Hard Skills</td>
+                            <td>: {{item.hard_skill}}</td>
+                        </tr>
+                        <tr>
+                            <td>Interest</td>
+                            <td>: {{item.interest}}</td>
+                        </tr>
+                    </table>
                     <router-Link :to="{path:'/update/'+item.id}" type="submit" class="btn btn-primary mb-1"> Update</router-Link> 
                     <button type="submit" @click="deleteStudentFunc(item.id)" class="btn btn-danger mb-1 ml-3" >Delete</button>
                     <img v-if="item.gender == 'Male'" src="./img/male.png" alt="" style="width: 50px; margin-left: 20px;" >
@@ -37,7 +51,7 @@
 </template>
 
 <script>
-import ShippingService from '@/ShippingService.js';
+import FormService from '@/FormService.js';
 import DeleteForm from "@/components/DeleteForm.vue";
 
 export default {
@@ -58,7 +72,7 @@ export default {
 
     methods : {
         viewStudent() {
-            ShippingService.getAll()
+            FormService.getAll()
                .then(response => {
                  this.studentData = response.data;
                  console.log(this.studentData);
@@ -70,7 +84,7 @@ export default {
 
         deleteStudentFunc(id) {
             if (confirm("Anda yakin ingin menghapus data ?")) {
-                ShippingService.deleteStudent(id)
+                FormService.deleteStudent(id)
                 .then((response) => {
                     console.log(response.data);
                     this.success = true;

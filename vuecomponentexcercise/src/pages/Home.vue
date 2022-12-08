@@ -1,6 +1,6 @@
 <template>
     <div >
-      <Navbar></Navbar><br>
+      <Home></Home><br>
       <Copyright></Copyright>
      
     </div>
@@ -8,7 +8,7 @@
   
   <script>
   
-  import Navbar from '../components/NavbarComponent.vue'
+  import Home from '../components/HomeComponent.vue'
   import Copyright from '../components/CopyrightComponent'
   export default {
     name:"DetailPage",
@@ -30,7 +30,7 @@
       }
     },
     components: {
-      Navbar,
+      Home,
       Copyright
     },
   }

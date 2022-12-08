@@ -1,6 +1,6 @@
 import http from "./http-common";
 
-class ShippingService {
+class FormService {
     insert(data) {
         return http.post("/insert", data);
     }
@@ -22,4 +22,4 @@ class ShippingService {
     }
 }
 
-export default new ShippingService();
+export default new FormService();

@@ -3,7 +3,7 @@
         <center>
             <form class="border border rounded my-1 p-5 " style="width: 1000px;">
             <h1> Success!</h1><br>
-            <h3>Student data has been updated!</h3>
+            <h3>Student data has been Input!</h3>
             <router-Link to="/" class="btn btn-primary mb-1 mt"  style="background-color: blue;">Close</router-Link>
         </form>
         </center>

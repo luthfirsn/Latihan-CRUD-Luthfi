@@ -1,8 +1,7 @@
 import Home from "./pages/Home.vue";
-import Gallery from "./pages/Gallery.vue";
-import FormShipping from "./pages/FormShipping.vue";
-import DeleteForm from "./pages/FormDelete.vue";
-import Update from "./pages/FormUpdate.vue"
+import FormAdd from "./pages/FormAdd.vue";
+import Update from "./pages/FormUpdate.vue";
+import DeleteForm from "./pages/FormDelete.vue"
 
 export default [
     {
@@ -10,12 +9,8 @@ export default [
         component : Home,
     },
     {
-        path : "/gallery",
-        component : Gallery, 
-    },
-    {
         path : "/add",
-        component : FormShipping, 
+        component : FormAdd, 
     },
     {
         path : "/update/:id",

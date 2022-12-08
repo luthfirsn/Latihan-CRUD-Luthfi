@@ -1,4 +1,8 @@
 <template>
+   <div>
+    <div>
+        <img src="https://www.gstatic.com/classroom/themes/img_code.jpg" alt="" id="Logo" width="100%" height="170px">
+    </div>
     <div class="d-flex flex-row justify-content-center">
         <form class="border   border-primary rounded my-3 p-5" style="width: 800px;" @submit.prevent="inputAddForm" v-show="!success">
         <h2 class="text-center mb-3 p-2" v-show="!success">Add Student</h2>
@@ -58,11 +62,12 @@
   <SuccessForm v-show="success"></SuccessForm>
 
     </div>
+   </div>
 </template>
 
 <script>
-import ShippingService from '@/ShippingService';
-import SuccessForm from './SuccesForm.vue';
+import FormService from '@/FormService';
+import SuccessForm from './SuccessForm.vue';
 
 export default {
 
@@ -87,7 +92,7 @@ export default {
   inputAddForm(){
     let data = this.studentData;
 
-    ShippingService.insert(data)
+    FormService.insert(data)
       .then(response => {
           console.log(response.data);
           this.success = true;

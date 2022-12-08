@@ -7,7 +7,7 @@
   
   <script>
   
-  import FormAddStudent from '../components/FormAddStudent.vue'
+  import FormAddStudent from '../components/FormAdd.vue'
   import Copyright from '../components/CopyrightComponent'
  
   export default {
