@@ -12,7 +12,7 @@
     </div>
 </template>
 <script>
-import CardS from './CardComponent'
+import CardS from './CardComponent.vue'
 export default {
   name: 'MainComponent',
   components : {
@@ -25,5 +25,11 @@ export default {
       arrCardPrice : ["IDR 89.300.000","IDR 14.500.000","IDR 22.000.000","IDR 12.000.000"],
     }
   },
+  methods : {
+    changePictureFunc : function (cardimage) {
+      this.$emit('changePicture', cardimage)
+      
+    }
+  }
 }
 </script>
